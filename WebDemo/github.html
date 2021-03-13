@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>github前端页面</title>
+		<script src="js/performance.js"></script>
 	</head>
+
 	<body>
 		<h1>Github的前端测试页面</h1>
+
+		<script>
+			window.onload = function() {
+				var times = getPerformanceTiming()
+				console.log(times)
+				alert(times.appcache)
+			}
+		</script>
 	</body>
+
 </html>

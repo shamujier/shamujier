@@ -56,19 +56,20 @@ function ergodicObject(div,times) {
 
 function ergodicResource(div,resource) {
 	createElement(div,"h2","Performance API获取的资源数据");
+	createElement(div,"h3","资源数据的数量为:"+resource.length);
 	
 	//遍历资源
 	Object.keys(resource).forEach(key => {
 		var resourceObj=resource[key];
 		createElement(div,"h4",key + " ----> " + resourceObj);
-		mma(resourceObj);
+		resourceData(resourceObj);
 	})
 		
 	
 }
 
 
-function mma(obj){
+function resourceData(obj){
 		console.log(obj);
 		createElement(div,"h6","encodedBodySize = "+obj["encodedBodySize"]);
 		createElement(div,"h6","decodedBodySize = "+obj["decodedBodySize"]);

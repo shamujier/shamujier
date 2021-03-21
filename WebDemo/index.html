@@ -3,152 +3,15 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>Web前端页面</title>
-		<script src="js/jquery-3.3.1.js"></script>
-		<link rel="stylesheet" href="js/jasmine-2.8.0/jasmine.css">
-		<script src="js/jasmine-2.8.0/jasmine.js"></script>
-		<script src="js/jasmine-2.8.0/jasmine-html.js"></script>
-		<script src="js/jasmine-2.8.0/boot.js"></script>
-		<style>
-			.jasmine-alert{
-				background-color: ;
-			}
-		</style>
+		<title>Web前端登录页面</title>
 	</head>
 
 	<body>
-		<!--<a href="#" onclick="get1()">发送GET请求</a>
-		<img src="http://localhost:8080/test/get1" />-->
-
-		<script>
-			function get1() {
-				//				$.get("http://localhost:8080/test/get1",function(data,status){
-				//					console.log(status);
-				//					console.log(data);
-				//				});
-
-				$.getJSON("http://localhost:8080/test/get1").then(
-					function(result) {
-						console.log(result);
-					}
-				);
-			}
-
-			//每一個測試用例超时的超时时间
-			jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000;
-
-			//请求的接口前缀
-			var base = "http://localhost:8080/test";
-
-			//测试模块
-			describe("ajax跨域完全讲解", function() {
-				//测试方法
-				it("get1请求", function(done) {
-					//服务器返回的结果
-					var result;
-
-					$.getJSON(base + "/get1").then(function(jsonObj) {
-						result = jsonObj;
-					});
-
-					//由于是异步请求，需要setTimeout来效验
-					setTimeout(function() {
-						expect(result).toEqual({
-							"data": "get1 ok"
-						});
-
-						//效验完成，通知jasmine框架
-						done();
-					}, 100);
-				});
-
-				//测试方法
-				it("postJson请求", function(done) {
-					//服务器返回的结果
-					var result;
-
-					$.ajax({
-						type: "post",
-						url: base + "/postJson",
-						contentType: "application/json;charset=utf-8",
-						data: JSON.stringify({
-							name: "liudehua"
-						}),
-						success: function(json) {
-							result = json;
-						}
-					});
-
-					//由于是异步请求，需要setTimeout来效验
-					setTimeout(function() {
-						expect(result).toEqual({
-							"data": "postJson liudehua"
-						});
-
-						//效验完成，通知jasmine框架
-						done();
-					}, 100);
-				});
-
-				//测试方法
-				it("getCookie请求", function(done) {
-					//服务器返回的结果
-					var result;
-
-					$.ajax({
-						type: "get",
-						url: base + "/getCookie",
-						xhrFields: {
-							withCredentials: true
-						},
-						success: function(json) {
-							result = json;
-						}
-					});
-
-					//由于是异步请求，需要setTimeout来效验
-					setTimeout(function() {
-						expect(result).toEqual({
-							"data": "getCookie liudehua"
-						});
-
-						//效验完成，通知jasmine框架
-						done();
-					}, 100);
-				});
-
-				//测试方法
-				it("getHeader请求", function(done) {
-					//服务器返回的结果
-					var result;
-
-					$.ajax({
-						type: "get",
-						url: base + "/getHeader",
-						headers: {
-							"x-header1": "AAA"
-						},
-						beforeSend: function(xhr) {
-							xhr.setRequestHeader("x-header2", "BBB")
-						},
-						success: function(json) {
-							result = json;
-						}
-					});
-
-					//由于是异步请求，需要setTimeout来效验
-					setTimeout(function() {
-						expect(result).toEqual({
-							"data": "getHeader AAA BBB"
-						});
-
-						//效验完成，通知jasmine框架
-						done();
-					}, 100);
-				});
-
-			});
-		</script>
+		<p>用户名：</p>
+				<p><input id="username" name="username" placeholder="请输入用户名" value="用户名"/></p>
+		<p>密码 ： </p>
+				<p><input id="password" type="password" name="password" placeholder="请输入密码" value="密码"/></p>
+				<p><input type="submit" value="登录" /></p>
 	</body>
 
 </html>

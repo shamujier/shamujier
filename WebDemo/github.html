@@ -3,49 +3,22 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>github前端页面</title>
-		<script src="js/performance.js"></script>
-		<style>
-			img.img{
-				width: 100;
-				height: 100;
-			}
-		</style>
+		<title>github登录界面</title>
 	</head>
 
 	<body>
-		<h1>Github的前端测试页面</h1>
 
-		<img width="100" height="100" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4078652309,2504805631&fm=26&gp=0.jpg"/>
-		<img width="100" height="100" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.ttpaihang.com%2Fimage%2Falbum%2F20130609090856837795.jpg&refer=http%3A%2F%2Fwww.ttpaihang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1618210544&t=a88ca4ee13b8618503527507ef8aaf9e"/>
-		<img width="100" height="100" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg00.hc360.com%2Fcloth%2F201202%2F201202290912092531.jpg&refer=http%3A%2F%2Fimg00.hc360.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1618210544&t=557366292956ecefcbad20e84d03d0d7"/>
-		<img width="100" height="100" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fipaper.oeeee.com%2Fipaper%2FC%2Fres%2F2016-12%2F29%2FGB04%2Fdcgb042911_b.jpg&refer=http%3A%2F%2Fipaper.oeeee.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1618210544&t=274c47dbace58d1901c9eb7f43183881"/>
-		<img width="100" height="100" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2015.zdface.com%2F20170627%2F768a3f8ecb83e14cb6c3a92786b9db4c.jpg&refer=http%3A%2F%2Fimg2015.zdface.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1618210544&t=651afb24353d2a3ecc8736d228e1f1f0"/>
+		<div id="div">
+			<form method="post" action="">
+				<h3>用户登录</h3>
+				<p>用户名：</p>
+				<p><input id="username" name="username" placeholder="请输入用户名"/></p>
+				<p>密码 ： </p>
+				<p><input id="password" type="password" name="password" placeholder="请输入密码"/></p>
+				<p><input type="submit" value="登录" /></p>
+			</form>
+		</div>
 
-		<!--<iframe src="https://www.baidu.com/" width="200" height="100"></iframe>-->
-		<!--<iframe src="https://www.google.com/" width="200" height="100"></iframe>-->
-
-		<div id="div"></div>
-
-		<script>
-			window.onload = function() {
-				var performances = window.performance;
-
-				if(!performance) {
-					// 当前浏览器不支持
-					alert("当前浏览器不支持Performance API")
-					return;
-				}
-
-				var div = document.getElementById("div");
-				var times = getPerformanceTiming(performances);
-				ergodicObject(div, times);
-
-				var resource = performances.getEntriesByType("resource");
-				console.log(resource);
-				ergodicResource(div, resource);
-			}
-		</script>
 	</body>
 
 </html>
